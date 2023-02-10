@@ -8,9 +8,9 @@ import Navbar from './components/Navbar'
 import Form from './components/Form'
 
 function App() {
-  const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    uri: "http://localhost:3000/"
+  const client = new ApolloClient({ //instancia del modulo client
+    cache: new InMemoryCache(), //memoria interna dentro de la app q almacena las peticiones
+    uri: "http://localhost:3000/" //conexción hacia el backend
   })
  
 
