@@ -3,9 +3,11 @@ import { useMutation } from "@apollo/client";
 import { CREATE_NOTE } from "../graphql/Mutation";
 import { UPDATE_NOTE } from "../graphql/Mutation";
 import { useLocation, useNavigate } from "react-router-dom";
+import userContainer from "../config/UserStore";
 
 function Form() {
   /*Glogal variables declaration block */
+  const getAuthorization = userContainer((state) => state.isAuthorized)
   const navigate = useNavigate();
   const location = useLocation();
   const [title, setTitle] = useState("");
@@ -23,6 +25,7 @@ function Form() {
   /*Location store variables */
 
   useEffect(() => {
+    if(!getAuthorization.isAuthorized) return navigate("/")
     if (getState) {
       setTitle(titleNote);
       setContent(contentNote);
