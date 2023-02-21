@@ -1,0 +1,50 @@
+query getNotes{
+  getNotes{
+    _id
+    title
+    content
+  }
+}
+
+mutation createNote($title: String, $content:String, $date:String, $author:String){
+createNote (title: $title, content: $content, date: $date, author: $author){
+  title
+  content
+  date
+  author
+	}
+}
+
+mutation deleteNote($_id:ID){
+  deleteNote(_id:$_id){
+    _id
+    title
+    date
+    author
+  }
+}
+
+mutation updateNote($_id:ID, $title: String, $content:String, $date:String, $author:String){
+  updateNote(_id:$_id, title: $title, content: $content, date: $date, author: $author){
+     _id
+    title
+    content
+    date
+    author
+  }
+}
+
+query login{
+  login
+}
+========================================
+query getNoteByTitle($title:String){
+  getNoteByTitle(title:$title){
+    _id
+    content
+  }
+}
+Variable
+{
+  "title": "Nueva Nota"
+}

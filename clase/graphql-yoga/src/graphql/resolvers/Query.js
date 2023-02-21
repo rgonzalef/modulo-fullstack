@@ -21,6 +21,10 @@ const Query = {
         }
         return message
         
+    },
+    async getNoteByTitle(_, {title}){
+        const singleNote = await Note.findOne({title: title})
+        return singleNote
     }
    
 }

@@ -1,6 +1,7 @@
 import Note from "../../models/Note.js"
 
 
+
 const Mutation = {
 
     async createNote( _, {title, content, date, author}) {
@@ -18,6 +19,7 @@ const Mutation = {
         return await Note.findByIdAndDelete (_id) //return await Note.find()
         
     }
+  
  
 }
 

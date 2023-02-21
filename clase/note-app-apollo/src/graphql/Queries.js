@@ -16,5 +16,14 @@ export const LOGIN = gql`
         login(email:$email, password:$password)
     }
 `
-
+export const GET_NOTE_BY_TITLE = gql`
+    query getNoteByTitle($title: String){
+        getNoteByTitle(title: $title){
+            _id
+            title
+            content
+            date
+    }
+    }
+`
 

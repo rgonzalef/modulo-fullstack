@@ -1,6 +1,7 @@
 type Query {
     getNotes: [Note]
     login(email:String, password:String) : String
+    getNoteByTitle(title:String) : Note
 
 }
 
@@ -8,6 +9,7 @@ type Mutation{
     createNote(title:String, content: String, date:String, author:String) : Note 
     updateNote(_id: ID, title:String, content: String, date:String, author:String) : Note
     deleteNote(_id: ID) : Note
+    
 
 
 }
@@ -19,3 +21,4 @@ type Note{
     date: String
     author: String
 }
+
